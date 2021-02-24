@@ -1,0 +1,22 @@
+from tkinter import *
+from tkinter.ttk import *
+from time import strftime
+
+root=Tk()
+root.title("Digital Clock")
+
+def time():
+    string=strftime("%H:%M:%S")
+    lbl.config(text=string)
+    lbl.after(100,time)
+
+
+lbl=Label(root,font=("times",100,"bold"),
+          background="black",
+          foreground="yellow")
+
+lbl.grid(row=3,column=2)
+
+time()
+
+mainloop()
